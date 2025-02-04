@@ -1,0 +1,42 @@
+{
+  "title": "Prețuri Simple și Transparente",
+  "subTitle": "Fiecare client este important pentru noi. Indiferent de planul ales, toate website-urile respectă cele mai înalte standarde de calitate: sunt extrem de rapide, concepute cu atenție la detalii, fiabile și optimizate SEO.",
+  "badge": "Premium",
+  "thirdOption": "Ai nevoie de soluții mai complexe?",
+  "btnText": "Obține o Ofertă Personalizată",
+  "btnLink": "/ro/contact",
+
+  "starterKit": {
+    "name": "Plan Starter",
+    "description": "Cea mai bună opțiune pentru afaceri mici",
+    "price": "800",
+    "cents": "RON",
+    "billingFrequency": "Taxă de reînnoire anuală de 400 RON",
+    "features": [
+      "Single Page Website",
+      "Domeniu + Găzduire + Certificate SSL",
+      "Mentenanță + Suport Tehnic",
+      "Optimizat complet pentru SEO"
+    ],
+    "purchaseBtnTitle": "Alege Planul Starter",
+    "purchaseLink": "/ro/contact"
+  },
+
+  "professionalToolbox": {
+    "name": "Plan Profesional",
+    "description": "Ideal pentru cei care își iau prezența online în serios",
+    "price": "2000+",
+    "cents": "RON",
+    "billingFrequency": "Taxă de reînnoire anuală de 800 RON",
+    "features": [
+      "Multi-Page Website",
+      "Funcționalitate avansată și specifică (poate implica costuri suplimentare)",
+      "Domeniu + Găzduire + Certificate SSL",
+      "Mentenanță + Suport Tehnic",
+      "Modificări rapide oricând este nevoie",
+      "Optimizat complet pentru SEO"
+    ],
+    "purchaseBtnTitle": "Alege Planul Profesional",
+    "purchaseLink": "/ro/contact"
+  }
+}

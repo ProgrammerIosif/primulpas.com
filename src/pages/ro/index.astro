@@ -1,0 +1,102 @@
+---
+// Import the necessary components
+import MainLayout from "@/layouts/MainLayout.astro";
+import HeroSection from "@components/sections/landing/HeroSection.astro";
+import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
+import FeaturesGeneral from "@components/sections/features/FeaturesGeneral.astro";
+import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
+import PricingSection from "@components/sections/pricing/PricingSection.astro";
+import FAQ from "@components/sections/misc/FAQ.astro";
+import heroImage from "@images/hero-image.webp";
+import faqs from "@data/ro/faqs.json";
+import features from "@data/ro/features.json";
+import pricing from "@data/ro/pricing.json";
+import design from "@images/design.webp";
+import results from "@images/results.webp";
+import fastAndReliable from "@images/fastandreliable.webp";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import FeatureCards from "@/components/sections/features/FeatureCards.astro";
+---
+
+<MainLayout lang="ro">
+  <HeroSection
+    title=`Creează-ți prezența online cu <span class="text-yellow-500 dark:text-yellow-400">PrimulPas</span>`
+    subTitle=`Fă primul pas înspre succesul digital împreună cu noi - construim prezențe online 
+      <span class="text-yellow-500 dark:text-yellow-400">RAPIDE</span>, 
+      <span class="text-yellow-500 dark:text-yellow-400">FIABILE</span> și
+      <span class="text-yellow-500 dark:text-yellow-400">ACCESIBILE</span> 
+      care atrag, impresionează și aduc vânzări.`
+    primaryBtn="Contactează-ne"
+    primaryBtnURL={getRelativeLocaleUrl("ro", "contact")}
+    secondaryBtn="Servicii și prețuri"
+    secondaryBtnURL="/ro/#pricing"
+    src={heroImage}
+    alt=""
+  />
+  <FeaturesNavs
+    title=`Cum îți vor fi de folos serviciile oferite de <span class="text-yellow-500 dark:text-yellow-400">PrimulPas Online</span>?`
+    tabs={[
+      {
+        "heading": "Design Modern și Profesional",
+        "content": "Construim site-uri care nu sunt doar atractive vizual, ci și profesionale, asigurând o impresie de durată asupra vizitatorilor tăi. Fiecare design este personalizat pentru a se potrivi identității brandului tău, indiferent dacă îți dorești un site corporativ elegant sau un spațiu creativ și vibrant.",
+        "svg": "dashboard",
+        "src": design,
+        "alt": "",
+        "first": true
+      },
+      {
+        "heading": "Construit pentru a Genera Rezultate",
+        "content": "Indiferent dacă ai nevoie să atragi noi clienți, să îți prezinți produsele sau compania, ne concentrăm pe rezultate. Cu ajutorul unei structuri clare a informației și optimizare pentru motoarele de căutare (SEO), site-ul tău va contribui la creșterea afacerii tale.",
+        "svg": "tools",
+        "src": results,
+        "alt": ""
+      },
+      {
+        "heading": "Rapid și Fiabil",
+        "content": "Site-urile noastre sunt construite cu tehnologii moderne pentru a asigura viteză și fiabilitate. Un site rapid și de încredere menține vizitatorii implicați și ajută afacerea ta să iasă în evidență în lumea online.",
+        "svg": "house",
+        "src": fastAndReliable,
+        "alt": ""
+      }
+    ]}
+  />
+  <FeatureCards 
+    title="Îmbunătățește-ți Afacerea cu o Prezență Online Puternică"
+    subtitle="Descoperă instrumentele și serviciile concepute pentru a stabili, îmbunătăți și dezvolta amprenta ta digitală. Fiecare soluție este creată pentru a asigura că afacerea ta se evidențiază și prosperă în mediul online."
+    features={[
+      {
+        "title": "Construiește un Website Impresionant",
+        "text": "Creează un website profesional și performant adaptat nevoilor tale. Fie că este un Landing Page elegant sau o platformă online, ne asigurăm că arată excelent și funcționează rapid și impecabil."
+      },
+      {
+        "title": "Găzduire Fiabilă și Securizată",
+        "text": "Oferim soluții de găzduire sigure, cu certificare SSL, asigurând că website-ul tău este mereu rapid, protejat și accesibil."
+      },
+      {
+        "title": "Suport și Mentenanță Continuă",
+        "text": "Menținem website-ul tău actualizat, securizat și funcțional, astfel încât să te poți concentra pe dezvoltarea afacerii tale."
+      },
+      {
+        "title": "Soluții Digitale Personalizate",
+        "text": "Ai nevoie de funcționalități specifice? Oferim servicii de dezvoltare personalizate pentru a aduce la viață ideile tale unice și pentru a ajuta afacerea ta să se extindă eficient."
+      },
+      {
+        "title": "Îmbunătățește-ți Vizibilitatea Online",
+        "text": "Design-urile noastre optimizate pentru SEO ajută afacerea ta să se claseze mai sus în motoarele de căutare, să atragă mai mulți vizitatori și să îi transforme în clienți fideli."
+      }
+    ]}
+  />
+  <FeaturesGeneral
+    title="Îndeplinim Cerințele Industriei"
+    subTitle="Într-o lume digitală în continuă schimbare, întreprinderile mici au nevoie de soluții flexibile și eficiente pentru a-și atinge obiectivele. Înțelegem cerințele unice ale pieței și adaptăm serviciile noastre pentru a răspunde nevoilor specifice ale fiecărui client, ajutându-i să devină competitivi și vizibili online."
+    alt="Produits ScrewFast dans des boîtes flottantes"
+    features={features}
+  />
+  <PricingSection pricing={pricing} />
+  <FAQ title="Întrebări frecvente" faqs={faqs} />
+  <HeroSectionAlt
+    title="Haide să construim împreună!"
+    subTitle="Călătoria ta în mediul online începe aici! Colaborează cu noi pentru a crea o prezență online puternică pentru afacerea ta."
+    url={getRelativeLocaleUrl("ro", "contact")}
+  />
+</MainLayout>

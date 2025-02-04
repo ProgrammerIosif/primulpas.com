@@ -1,11 +1,102 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// Import the necessary components
+import MainLayout from "@/layouts/MainLayout.astro";
+import HeroSection from "@components/sections/landing/HeroSection.astro";
+import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
+import FeaturesGeneral from "@components/sections/features/FeaturesGeneral.astro";
+import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
+import PricingSection from "@components/sections/pricing/PricingSection.astro";
+import FAQ from "@components/sections/misc/FAQ.astro";
+import heroImage from "@images/hero-image.webp";
+import faqs from "@data/faqs.json";
+import features from "@data/features.json";
+import pricing from "@data/pricing.json";
+import design from "@images/design.webp";
+import results from "@images/results.webp";
+import fastAndReliable from "@images/fastandreliable.webp";
+import FeatureCards from "@/components/sections/features/FeatureCards.astro";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<MainLayout>
+  <HeroSection
+    title=`Create your online presence with <span
+        class="text-yellow-500 dark:text-yellow-400">PrimulPas</span>`
+    subTitle=`Take the first step toward digital success with us - we build 
+      <span class="text-yellow-500 dark:text-yellow-400">FAST</span>, 
+      <span class="text-yellow-500 dark:text-yellow-400">RELIABLE</span> and
+      <span class="text-yellow-500 dark:text-yellow-400">COST-EFFECTIVE</span> 
+      online presences that attract, impress, and convert to sales.`
+    primaryBtn="Contact Us"
+    primaryBtnURL="/contact"
+    secondaryBtn="Services and Prices"
+    secondaryBtnURL="#pricing"
+    src={heroImage}
+    alt=""
+  />
+  <FeaturesNavs
+    title=`How are the services offered by <span class="text-yellow-500 dark:text-yellow-400">PrimulPas Online</span> going to help you?`
+    tabs={[
+      {
+        heading: "Modern and Professional Design",
+        content: "We craft websites that are not just visually appealing but also professional, ensuring they leave a lasting impression on your visitors. Each design is tailored to match your brand's identity, whether you're looking for a sleek corporate site or a vibrant creative space",
+        svg: "dashboard",
+        src: design,
+        alt: "",
+        first: true,
+      },
+      {
+        heading: "Built to Drive Results",
+        content: "Whether you need to attract new customers, showcase your products, or generate leads, we focus on results. With clear calls-to-action, search engine optimization (SEO), and strategic layouts, your website will help you grow your business.",
+        svg: "tools",
+        src: results,
+        alt: "",
+      },
+      {
+        heading: "Fast and Reliable",
+        content: "Our websites are built with modern tools to ensure speed and reliability. A fast, dependable site keeps visitors engaged and helps your business stand out in today's competitive online world.",
+        svg: "house",
+        src: fastAndReliable,
+        alt: "",
+      },
+    ]}
+  />
+  <FeatureCards
+    title="Elevate Your Business with a Strong Online Presence"
+    subtitle="Discover the tools and services designed to establish, enhance, and grow your digital footprint. Every solution is crafted to ensure your business stands out and thrives in the online world."
+    features={[
+      {
+        "title": "Build a Stunning Website",
+        "text": "Create a professional, high-performance website tailored to your needs. Whether it's a sleek landing page or a multi-page platform, we make sure it looks great and functions flawlessly."
+      },
+      {
+        "title": "Reliable & Secure Hosting",
+        "text": "We provide secure hosting solutions with SSL certification, ensuring your website is always fast, safe, and accessible."
+      },
+      {
+        "title": "Continuous Support & Maintenance",
+        "text": "We keep your website up to date, secure, and running smoothly, so you can focus on growing your business."
+      },
+      {
+        "title": "Customized Digital Solutions",
+        "text": "Have specific needs? We offer custom development services to bring your unique ideas to life and help your business scale efficiently."
+      },
+      {
+        "title": "Enhance Your Online Visibility",
+        "text": "Our SEO-friendly designs help your business rank higher on search engines, attract more visitors, and convert them into loyal customers."
+      },
+    ]}
+  />
+  <FeaturesGeneral
+    title="Meeting Industry Demands"
+    subTitle="In an ever-changing digital world, small businesses need flexible and effective solutions to meet their goals. We understand the unique demands of the market and tailor our services to address the specific needs of each client, helping them become competitive and visible online."
+    alt=""
+    features={features}
+  />
+  <PricingSection pricing={pricing} />
+  <FAQ title="Frequently<br />asked questions" faqs={faqs} />
+  <HeroSectionAlt
+    title="Let's Build Together"
+    subTitle="Your journey starts here. Partner with us to create a powerful online presence that drives success"
+    url="/contact"
+  />
+</MainLayout>

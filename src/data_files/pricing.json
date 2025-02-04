@@ -1,0 +1,42 @@
+{
+  "title": "Simple, Transparent Pricing",
+  "subTitle": "Every customer is important to us. Whatever plan you choose, all websites are kept to a very high standard of quality: they are all extremely fast, designed with attention to detail, reliable and SEO friendly.",
+  "badge": "Premium",
+  "thirdOption": "Do you have more complex needs?",
+  "btnText": "Get a Custom Quote",
+  "btnLink": "/contact",
+
+  "starterKit": {
+    "name": "Starter Plan",
+    "description": "Best option for small businesses or personal projects",
+    "price": "1000",
+    "cents": "RON",
+    "billingFrequency": "400 RON yearly renewal fee",
+    "features": [
+      "Single Page Website",
+      "Domain + Hosting + SSL Certificates",
+      "Maintenance + Technical Support",
+      "Built with SEO in mind"
+    ],
+    "purchaseBtnTitle": "Get the Starter Plan",
+    "purchaseLink": "contact"
+  },
+
+  "professionalToolbox": {
+    "name": "Professional Plan",
+    "description": "Best for people who take their online presence seriously",
+    "price": "2000+",
+    "cents": "RON",
+    "billingFrequency": "800 RON yearly renewal fee",
+    "features": [
+      "Multi-Page Website",
+      "Advanced and Specific Functionality (can be charged extra)",
+      "Domain + Hosting + SSL Certificates",
+      "Maintenance + Technical Support",
+      "Fast Changes whenever needed",
+      "Fully SEO Friendly"
+    ],
+    "purchaseBtnTitle": "Get the Professional Plan",
+    "purchaseLink": "contact"
+  }
+}

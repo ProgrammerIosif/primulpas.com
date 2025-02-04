@@ -1,0 +1,45 @@
+{
+  "subTitle": "Ask us anything about our brand and products, and get factual responses.",
+  "faqs": [
+    {
+      "question": "Why do I need a website for my business?",
+      "answer": "A website provides visibility, credibility, and allows customers to discover and engage with your business online."
+    },
+    {
+      "question": "How can you help my business stand out online?",
+      "answer": "We create personalized, modern, and optimized websites, so your business can attract and convert customers."
+    },
+    {
+      "question": "How long does it take to create a website?",
+      "answer": "The timeline can vary from a few days to 2 weeks, depending on the complexity of the project."
+    },
+    {
+      "question": "What costs are involved in creating and maintaining a website?",
+      "answer": "Our prices are customized and include development, domain name, hosting, maintenance and future updates or modifications . Request a free quote!"
+    },
+    {
+      "question": "Do you offer SEO or digital marketing services?",
+      "answer": "Yes, we optimize websites for search engines (SEO) and provide solutions for digital promotion."
+    },
+    {
+      "question": "Can I update the content of my website after it's finished?",
+      "answer": "Absolutely! We offer technical support and maintenance. We'll modify text, images, and pages on request."
+    },
+    {
+      "question": "What service packages do you offer?",
+      "answer": "We offer packages for simple or more complex websites, branding and digital promotion solutions."
+    },
+    {
+      "question": "Will my website be optimized for mobile devices?",
+      "answer": "Yes, all our websites are responsive and look great on any device, including phones and tablets."
+    },
+    {
+      "question": "What happens if I need technical support?",
+      "answer": "We offer post-launch technical support and maintenance packages to ensure your website runs smoothly."
+    },
+    {
+      "question": "Can I see the progress of my website during development?",
+      "answer": "Absolutely! We’ll share regular updates so you’re always in the loop about the project's status."
+    }
+  ]
+}

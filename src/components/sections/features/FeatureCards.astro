@@ -1,0 +1,111 @@
+---
+// Feature Cards grid Section
+// ------------
+// Description: A grid of cards with feature information in a 4 column layout.
+
+// Components
+import Card from "@components/ui/cards/FeatureCard.astro";
+
+// Content
+// - Cards
+import feature1 from "@images/cards/feature1.svg";
+import feature2 from "@images/cards/feature2.svg";
+import feature3 from "@images/cards/feature3.svg";
+import feature4 from "@images/cards/feature4.svg";
+import feature5 from "@images/cards/feature5.svg";
+
+type Feature = {
+    title: string,
+    text: string
+}
+
+type Props = {
+    title: string,
+    subtitle: string,
+    features: Feature[]
+}
+
+const { title, subtitle, features } = Astro.props;
+---
+
+<section
+  id="featureCards"
+  class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+>
+  <div>
+    <div class="col-span-12 mx-auto mb-12 max-w-4xl text-center">
+      <h2
+        class="block text-balance text-2xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 sm:text-3xl"
+      >
+        {title}
+      </h2>
+      <p
+        class="mt-3 text-pretty pb-0 text-lg leading-relaxed text-neutral-700 dark:text-neutral-400"
+      >
+        {subtitle}
+      </p>
+    </div>
+  </div>
+  <div class="grid gap-6 grid-cols-12">
+    <div class="col-span-12 mx-auto max-lg:max-w-[470px] lg:col-span-4">
+      <Card
+        id="1"
+        content={features[0]}
+        image={feature1}
+      />
+    </div>
+    <div
+      class="col-span-12 mx-auto flex flex-col gap-6 max-lg:max-w-[470px] lg:col-span-4"
+    >
+      <Card
+        id="2"
+        content={features[1]}
+        image={feature2}
+      />
+      <Card
+        id="3"
+        content={features[2]}
+        image={feature3}
+      />
+    </div>
+    <div
+      class="col-span-12 mx-auto flex flex-col gap-6 max-lg:max-w-[470px] lg:col-span-4"
+    >
+      <Card
+        id="4"
+        content={features[3]}
+        image={feature4}
+      />
+      <Card
+        id="5"
+        content={features[4]}
+        image={feature5}
+      />
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  for (let i = 1; i <= 5; i++)
+    gsap.set("#featureCard" + i, {
+      autoAlpha: 0,
+      y: 10,
+      willChange: "transform, opacity",
+    });
+
+  for (let i = 1; i <= 5; i++)
+    gsap.to("#featureCard" + i, {
+      scrollTrigger: {
+        trigger: "#featureCards",
+        start: "top 40%",
+      },
+      y: 0,
+      duration: 0.6,
+      autoAlpha: 1,
+      delay: i * 0.1,
+    });
+</script>

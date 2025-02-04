@@ -1,0 +1,137 @@
+---
+// Import the necessary dependencies.
+import AuthBtn from "@components/ui/buttons/AuthBtn.astro";
+import TextInput from "@components/ui/forms/input/TextInput.astro";
+import EmailContactInput from "@components/ui/forms/input/EmailContactInput.astro";
+import PhoneInput from "@components/ui/forms/input/PhoneInput.astro";
+import TextAreaInput from "@components/ui/forms/input/TextAreaInput.astro";
+import Icon from "@components/ui/icons/Icon.astro";
+
+// Define the variables that will be used in this component
+---
+
+<!-- Contact Us -->
+<section class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+  <div class="mx-auto max-w-2xl lg:max-w-5xl">
+    <div class="max-lg:mt-10 grid items-center gap-6 lg:grid-cols-2 lg:gap-16">
+      <div class="max-lg:text-center">
+        <h1 id="contactTitle"
+          class="text-balance text-4xl font-bold tracking-tight text-neutral-800 dark:text-neutral-200 md:text-5xl md:leading-tight opacity-0"
+        >
+          Contanctează-ne
+        </h1>
+        <p id="contactText" class="mt-3 text-pretty text-neutral-600 dark:text-neutral-400 text-xl opacity-0">
+          Ai întrebări sau vrei să discuți un proiect? Contactează-ne și hai să creăm soluția perfectă cu instrumentele și serviciile noastre. Trimite-ne un mesaj completând formularul sau dă-ne un mesaj sau un apel la:
+        </p>
+        <a href="tel:+40748500136">
+          <div id="contactNumber" class="mt-3 flex gap-4 items-center max-lg:justify-center opacity-0">
+            <Icon name="phone"/>
+            <p class="text-3xl font-bold text-orange-400 dark:text-orange-300">
+            0748500136
+            </p>
+          </div>
+        </a>
+      </div>
+      <div id="contactForm" class="flex flex-col rounded-xl p-4 sm:p-6 lg:p-8 opacity-0">
+        <!-- Form for user input with various input fields.-->
+        <!-- Each field utilizes a different input component for the specific type of input (text, email, phone, and textarea)-->
+        <form>
+          <div class="grid gap-4">
+            <TextInput
+              id="hs-name-contacts"
+              label="Nume"
+              name="hs-name-contacts"
+            />
+            <EmailContactInput id="hs-email-contacts" />
+            <PhoneInput id="hs-phone-number" />
+            <TextAreaInput
+              id="hs-about-contacts"
+              label="Detalii"
+              name="hs-about-contacts"
+            />
+          </div>
+
+          <div class="mt-4 grid">
+            <AuthBtn title="Trimite mesaj" />
+          </div>
+
+          <div class="mt-3 text-center">
+            <p class="text-sm text-neutral-600 dark:text-neutral-400">
+              Te vom contacta în cel mai scurt timp.
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+
+  type AnimationSettings = {
+    autoAlpha?: number;
+    y?: number;
+    x?: number;
+    willChange?: string;
+  };
+
+  function setElementAnimationDefaults(
+    id: string,
+    settings: AnimationSettings
+  ) {
+    gsap.set(id, settings);
+  }
+
+  setElementAnimationDefaults("#contactTitle", {
+    autoAlpha: 0,
+    y: 50,
+    willChange: "transform, opacity",
+  });
+
+  setElementAnimationDefaults("#contactText", {
+    autoAlpha: 0,
+    y: 50,
+    willChange: "transform, opacity",
+  });
+  
+  setElementAnimationDefaults("#contactNumber", {
+    autoAlpha: 0,
+    y: 50,
+    willChange: "transform, opacity",
+  });
+
+  setElementAnimationDefaults("#contactForm", {
+    autoAlpha: 0,
+    x: 300,
+    willChange: "transform, opacity",
+  });
+
+  let timeline = gsap.timeline({ defaults: { overwrite: "auto" } });
+
+  timeline.to("#contactTitle", {
+    duration: 1.5,
+    autoAlpha: 1,
+    y: 0,
+    delay: 0.3,
+    ease: "power2.out",
+  });
+
+  timeline.to(
+    "#contactText",
+    { duration: 1.5, autoAlpha: 1, y: 0, ease: "power2.out" },
+    "-=1.2"
+  );
+
+  timeline.to(
+    "#contactNumber",
+    { duration: 1.5, autoAlpha: 1, y: 0, ease: "power2.out" },
+    "-=1.2"
+  );
+
+  timeline.to(
+    "#contactForm",
+    { duration: 1.5, autoAlpha: 1, x: 0, ease: "power2.inOut"},
+    "-=2.3"
+  );
+</script>

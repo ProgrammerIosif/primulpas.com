@@ -1,0 +1,39 @@
+---
+// Import the necessary components
+import MainLayout from "@/layouts/MainLayout.astro";
+import ContactSection from "@components/sections/ro/ContactSection_ro.astro";
+import ContactCards from "@components/sections/misc/ContactCards.astro";
+---
+
+<!--Utilizing MainLayout for the outer layout of the page, and defining meta for SEO purposes-->
+<MainLayout
+  title="Contact | PrimulPas"
+  lang="ro"
+>
+  <ContactSection />
+  <ContactCards
+    title="Contactează-ne cu încredere, indiferent de motiv!"
+    cards={[
+      {
+        title: "Suport pentru Clienți",
+        text: "Ai nevoie de asistență? Suntem aici să te ajutăm cu orice întrebări sau probleme ai avea.",
+        svg: "customerSupport",
+      },
+      {
+        title: "Întrebări despre Proiecte",
+        text: "Ai un proiect în minte? Hai să discutăm ideile tale și să găsim cele mai bune soluții pentru nevoile tale.",
+        svg: "projectInquiries",
+      },
+      {
+        title: "Asistență Tehnică",
+        text: "Întâmpini dificultăți tehnice? Contactează-ne și ne vom asigura că totul funcționează fără probleme.",
+        svg: "technicalAssistance",
+      },
+      {
+        title: "Întrebări Generale",
+        text: "Ai alte întrebări? Contactează-ne fără ezitare și îți vom oferi rapid răspunsurile de care ai nevoie.",
+        svg: "generalQuestions",
+      },
+    ]}
+  />
+</MainLayout>
